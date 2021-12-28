@@ -2,7 +2,11 @@ import express from "express"
 import { restaurantSchema, employee }from "../schema"
 const router = express.Router();
 const app = express();
-router.get("/", async (req, res) => {
+
+router.get('/', (req,res)=>{
+  res.send('hello')
+})
+router.get("/get", async (req, res) => {
    await restaurantSchema
     .find()
     .then((data) => {
