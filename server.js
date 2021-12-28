@@ -6,11 +6,12 @@ import router from "./Routes/router";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
+const path = express.Router()
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use('/EASY_EAT',router)
-app.get("/", (req, res) => {
+// app.use('/EASY_EAT',router)
+path.get("/", (req, res) => {
   res.send("hell0");
 });
 const PORT = process.env.PORT || 5000;
