@@ -1,12 +1,10 @@
-const express = require("express");
+import express from "express"
 const router = express.Router();
-const mongoose = require("mongoose");
 const app = express();
 
 const { restaurantSchema, employee } = require("../schema");
 
 router.get("/", async (req, res) => {
-  console.log('entered')
    await restaurantSchema
     .find()
     .then((data) => {
