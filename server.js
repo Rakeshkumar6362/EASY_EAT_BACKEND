@@ -1,8 +1,10 @@
+// const router = require('./Routes/router')
+import router from './Routes/router.js'
 import express from "express";
 import mongoose from "mongoose";
 
 import cors from "cors";
-import router from "./Routes/router";
+// import router from "./Routes/router";
 // import {router} from './Routes/router'
 console.log(router,"Ss");
 // import router from '../EASY_EAT_BACKEND/Routes/router'
@@ -12,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use(router)
+// app.use(router)
 // app.get("/", (req, res) => {
 //   res.send("hell0");
 // });

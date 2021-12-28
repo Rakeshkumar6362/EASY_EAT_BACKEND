@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+import mongoose from 'mongoose'
 
 const dataSchema = new mongoose.Schema({
   _id: {
@@ -27,4 +28,5 @@ const dataSchema = new mongoose.Schema({
 });
 
 const restaurantSchema = mongoose.model("demo", dataSchema);
-module.exports = { restaurantSchema };
+// module.exports = { restaurantSchema };
+export {restaurantSchema}

@@ -1,5 +1,5 @@
 import express from "express"
-import { restaurantSchema, employee }from "../schema"
+import { restaurantSchema }from "../schema.js"
 const router = express.Router();
 const app = express();
 console.log("reached");
@@ -34,4 +34,6 @@ router.delete("/delete", async (req, res) => {
       message:"deleted successfully"
   })
 });
-module.exports = router;
+export default router;
+// module.exports = router;
+
