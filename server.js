@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 // app.use('/EASY_EAT',router)
-path.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("hell0");
 });
 const PORT = process.env.PORT || 5000;
