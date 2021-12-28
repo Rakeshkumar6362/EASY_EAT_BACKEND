@@ -2,7 +2,7 @@ import express from "express"
 import { restaurantSchema, employee }from "../schema"
 const router = express.Router();
 const app = express();
-
+console.log("reached");
 router.get('/', (req,res)=>{
   res.send('hello')
 })
