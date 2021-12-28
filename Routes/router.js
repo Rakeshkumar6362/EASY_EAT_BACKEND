@@ -1,9 +1,7 @@
 import express from "express"
+import { restaurantSchema, employee }from "../schema"
 const router = express.Router();
 const app = express();
-
-const { restaurantSchema, employee } = require("../schema");
-
 router.get("/", async (req, res) => {
    await restaurantSchema
     .find()
@@ -26,9 +24,7 @@ router.post("/addData", async (req, res) => {
       data
   })
 });
-
 router.delete("/delete", async (req, res) => {
-//   const data = req.params.name;
   await restaurantSchema.deleteMany({}).then(data=>{console.log(data)})
   res.send({
       message:"deleted successfully"
