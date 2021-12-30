@@ -7,7 +7,6 @@ const dataSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    // required:true
   },
   title: {
     type: String,
@@ -26,7 +25,26 @@ const dataSchema = new mongoose.Schema({
     // required:true
   },
 });
+const userSchema = new mongoose.Schema({
+  userName: {
+    type: String,
+    required: true,
+  },
+  phoneNumber: {
+    type: Number,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password:{
+    type:String,
+    required:true
+  }
+});
 
 const restaurantSchema = mongoose.model("demo", dataSchema);
+const userDetails = mongoose.model('user',userSchema)
 // module.exports = { restaurantSchema };
-export {restaurantSchema}
+export {restaurantSchema,userDetails}
