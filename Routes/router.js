@@ -7,6 +7,17 @@ router.get("/", (req, res) => {
   res.send("hello");
 });
 
+router.get('/getExistingUser/:phoneNumber',async (req,res)=>{
+  let data = req.params.phoneNumber
+  await userDetails
+  .find({phoneNumber:data})
+  .then(data=>{
+    res.send(data)
+  }).catch(err=>{
+    res.send(err)
+  })
+})
+
 router.get("/getAll/user", async (req, res) => {
   await userDetails
     .find({})
