@@ -6,7 +6,6 @@ import mongoose from "mongoose";
 import cors from "cors";
 // import router from "./Routes/router";
 // import {router} from './Routes/router'
-console.log(router,"Ss");
 // import router from '../EASY_EAT_BACKEND/Routes/router'
 import dotenv from "dotenv";
 dotenv.config();
