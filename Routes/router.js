@@ -10,7 +10,7 @@ import twilio from 'twilio'
 
 const client = twilio(accountSid,authToken)
 
-client.verify.services.create({friendlyName: 'My First Verify Service'})
+client.verify.services.create({friendlyName: 'Your EASY EAT'})
                       .then(service => console.log(service.sid)); 
 router.get("/", (req, res) => {
   res.send("hello");
