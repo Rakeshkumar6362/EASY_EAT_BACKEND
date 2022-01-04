@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
   res.send("hello");
 });
 router.get('/getOtp/:phoneNumber',(req,res)=>{
-  client.verify.services('VAcd9494a7a85627418d3d1150a71b4fd9')
+  client.verify.services('VA310b2b5645065bb632e98f3f580ad854')
   .verifications
   .create({
     to:`+91${req.params.phoneNumber}`,
@@ -24,10 +24,13 @@ router.get('/getOtp/:phoneNumber',(req,res)=>{
   })
   .then((data)=>{
     res.send(data)
+  }).
+  catch(err=>{
+    res.send(err)
   })
 })
 router.get('/verifyOtp/:phoneNumber/:otp',(req,res)=>{
-  client.verify.services('VAcd9494a7a85627418d3d1150a71b4fd9')
+  client.verify.services('VA310b2b5645065bb632e98f3f580ad854')
   .verificationChecks
   .create({
     to:`+91${req.params.phoneNumber}`,
