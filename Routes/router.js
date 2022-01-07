@@ -43,6 +43,16 @@ router.get('/verifyOtp/:phoneNumber/:otp',(req,res)=>{
     console.log(err);
   })
 })
+router.get('/send/sms/user/:phoneNumber',(req,res)=>{
+  client.messages
+      .create({body: 'Hi there your order placed successfully!!, sit back and wait', from: '+12053468297', to: `+91${req.params.phoneNumber}`})
+      .then(message => console.log(message.sid));
+})
+router.get('/send/sms/restaurant/:phoneNumber',(req,res)=>{
+  client.messages
+      .create({body: 'Hi you have recieved an order, sit back and wait', from: '+12053468297', to: `+91${req.params.phoneNumber}`})
+      .then(message => console.log(message.sid));
+})
 
 router.get('/getExistingUser/:phoneNumber',async (req,res)=>{
   let data = req.params.phoneNumber
@@ -97,6 +107,7 @@ router.post("/addData", async (req, res) => {
     data,
   });
 });
+
 router.delete("/delete", async (req, res) => {
   await restaurantSchema.deleteMany({}).then((data) => {
     console.log(data);
