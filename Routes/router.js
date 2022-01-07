@@ -46,12 +46,12 @@ router.get('/verifyOtp/:phoneNumber/:otp',(req,res)=>{
 router.get('/send/sms/user/:phoneNumber',(req,res)=>{
   client.messages
       .create({body: 'Hi there your order placed successfully!!, sit back and wait', from: '+12053468297', to: `+91${req.params.phoneNumber}`})
-      .then(message => console.log(message.sid));
+      .then(message => res.send(message));
 })
 router.get('/send/sms/restaurant/:phoneNumber',(req,res)=>{
   client.messages
       .create({body: 'Hi you have recieved an order, sit back and wait', from: '+12053468297', to: `+91${req.params.phoneNumber}`})
-      .then(message => console.log(message.sid));
+      .then(message => res.send(message));
 })
 
 router.get('/getExistingUser/:phoneNumber',async (req,res)=>{
